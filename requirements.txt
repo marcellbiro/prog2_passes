@@ -1,7 +1,6 @@
 dash
 plotly
 pandas
-pickle
 gunicorn
 dropbox
 requests
