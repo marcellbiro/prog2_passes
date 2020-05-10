@@ -1,0 +1,7 @@
+dash
+dash_core_components
+dash_htmal_components
+plotly.express
+plotly.graph_objects
+pandas
+pickle
