@@ -1,6 +1,5 @@
 dash
-plotly.express
-plotly.graph_objects
+plotly
 pandas
 pickle
 gunicorn
