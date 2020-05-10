@@ -12,10 +12,14 @@ import dash_html_components as html
 import plotly.express as px
 import plotly.graph_objects as go
 import pandas as pd
+import requests
 
+from Dash_Szabo_Biro import touch_df
 ### data
-df = pd.read_pickle("/Users/benceszabo/OneDrive/SzBence/Rajk/Prog_2/prog2-2020/touch.pkl")
 
+url = "https://drive.google.com/open?id=1LnPLYv9EVkWKjj048Hq97Uz8vZVe4TAQ"
+
+df = json.loads(requests.get(url).content)
 
 app = dash.Dash(__name__)
 external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
@@ -124,3 +128,4 @@ if __name__ == '__main__':
 
 
 #fig.update_layout(title="GitHub commits per day", xaxis_nticks=36)
+
