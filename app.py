@@ -17,7 +17,7 @@ import requests
 from Dash_Szabo_Biro import touch_df
 ### data
 
-url = "https://drive.google.com/open?id=1LnPLYv9EVkWKjj048Hq97Uz8vZVe4TAQ"
+url = "https://drive.google.com/uc?export=download&id=1LnPLYv9EVkWKjj048Hq97Uz8vZVe4TAQ"
 
 df = json.loads(requests.get(url).content)
 
