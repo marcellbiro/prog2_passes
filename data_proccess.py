@@ -85,7 +85,7 @@ touch_df = pd.DataFrame(touches)
 
 touch_df = touch_df.assign(Distance = lambda x: ((x.end_x - x.start_x)**2 + (x.end_y - x.start_y)**2)**(1/2))
 
-touch_df.to_pickle("passes.pkl", compression="gzip")
+touch_df.to_pickle("passes.pkl")
 
 with open("passes.pkl", "rb") as fp:
-    dbx.files_upload(fp.read(), "/passes.pkl")
+    dbx.files_upload(fp.read(), "/passes_df.pkl")
