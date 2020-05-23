@@ -3,6 +3,4 @@ plotly
 pandas
 gunicorn
 dropbox
-requests
-json
 io
