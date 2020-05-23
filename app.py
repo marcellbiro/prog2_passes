@@ -14,14 +14,13 @@ import plotly.graph_objects as go
 import pandas as pd
 import requests
 import json
+import io
+import dropbox
 
+token = "xtLHltG_SEAAAAAAAAAADPjsxmboPj-DvkC2sEDYsqa212QpB8t0_X0c_TM6ez25"
+dbx = dropbox.Dropbox(token)
 
-### data
-
-url = "https://drive.google.com/uc?export=download&id=1LnPLYv9EVkWKjj048Hq97Uz8vZVe4TAQ"
-
-df = json.loads(requests.get(url).content)
-
+df = pd.read_pickle(io.BytesIO(dbx.files_download("/passes.pkl")[1].content), compression="gzip")
 app = dash.Dash(__name__)
 external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
