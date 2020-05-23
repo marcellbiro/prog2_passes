@@ -21,6 +21,7 @@ token = "xtLHltG_SEAAAAAAAAAADPjsxmboPj-DvkC2sEDYsqa212QpB8t0_X0c_TM6ez25"
 dbx = dropbox.Dropbox(token)
 
 df = pd.read_pickle(io.BytesIO(dbx.files_download("/passes.pkl")[1].content), compression="gzip")
+
 app = dash.Dash(__name__)
 external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
@@ -128,4 +129,3 @@ if __name__ == '__main__':
 
 
 #fig.update_layout(title="GitHub commits per day", xaxis_nticks=36)
-
