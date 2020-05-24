@@ -15,11 +15,12 @@ import pandas as pd
 import requests
 import json
 import dropbox
+import pickle
 
-token = "xtLHltG_SEAAAAAAAAAADPjsxmboPj-DvkC2sEDYsqa212QpB8t0_X0c_TM6ez25"
+token = "xtLHltG_SEAAAAAAAAAAD9H9pFN1o6EXpbwJVagmBGC9I5RtLfTolMKZbbPnmRml"
 dbx = dropbox.Dropbox(token)
 
-df = pickle.loads(dbx.files_download("/test_df.pkl")[1].content)
+df = pickle.loads(dbx.files_download("/passes_df.pkl")[1].content)
 
 app = dash.Dash(__name__)
 external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
