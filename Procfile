@@ -1,2 +1,1 @@
-web: gunicorn -w 4 -b 0.0.0.0:$PORT -k gevent main:app
-heroku ps:scale web=1
+web: gunicorn app:server --timeout 300
