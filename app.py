@@ -19,7 +19,6 @@ dbx = dropbox.Dropbox(token)
 
 df = pickle.loads(dbx.files_download("/passes_df.pkl")[1].content)
 
-app = dash.Dash(__name__)
 external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
@@ -29,10 +28,6 @@ filt_df =  df.groupby(['Player','Date']).max().reset_index()
 players_unique = filt_df["Player"].unique().tolist()
 
 filt_box_df = df.groupby(['Player','Date']) ['Outcome'].value_counts().rename("counts").reset_index()
-
-
-#fig = go.Figure(data=go.Heatmap(z=z, x=dates, y=players, colorscale="Viridis"))
-
 
 layout = go.Layout( height = 1000,
                    xaxis_showgrid=False,
@@ -115,16 +110,9 @@ def update_boxplot(value):
 
 
 
-
-# slider
-#dcc.RangeSlider(
-#    marks={i: "Label {}".format(i) for i in range(-5, 7)}, min=-5, max=6, value=[-3, 4]
-#)
-
 server = app.server
 
 if __name__ == '__main__':
+  
     app.run_server(debug=True)
-
-
-#fig.update_layout(title="GitHub commits per day", xaxis_nticks=36)
+    
