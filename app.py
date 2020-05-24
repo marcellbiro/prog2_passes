@@ -124,6 +124,8 @@ def update_boxplot(value):
 #    marks={i: "Label {}".format(i) for i in range(-5, 7)}, min=-5, max=6, value=[-3, 4]
 #)
 
+server = app.server
+
 if __name__ == '__main__':
     app.run_server(debug=True)
 
