@@ -13,8 +13,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 import dropbox
 import pickle
+import os
 
-token = "xtLHltG_SEAAAAAAAAAAEBOleqccikw3GSqRjWx1buy5EwuHwLKUshLDtUjzbhoq"
+token = os.environ["TOKEN"]
 dbx = dropbox.Dropbox(token)
 
 df = pickle.loads(dbx.files_download("/passes_df.pkl")[1].content)
